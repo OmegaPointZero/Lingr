@@ -15,17 +15,17 @@ def tokenize(token):
     end_identifiers = [';', ']', ')', '"']
 
     if token[0] in start_identifiers:
-        return[{'IDENTIFIER': token[0]}] + tokenize(token[1:])
+        return[{'TYPE' : 'IDENTIFIER', 'TOKEN': token[0]}] + tokenize(token[1:])
     elif token[-1] in end_identifiers:
-        return tokenize(token[:-1]) + [ { 'IDENTIFIER': token[-1] } ]
+        return tokenize(token[:-1]) + [ { 'TYPE' : 'IDENTIFIER', 'TOKEN' : token[-1] } ]
     if token[0] == '_':
-        return [ { 'NAME': token } ]
+        return [ { 'TYPE': 'NAME', 'TOKEN': token } ]
     elif re.match('^\d+$', token):
-        return [{'INT': token}]
+        return [{'TYPE' : 'INT', 'TOKEN': token}]
     elif token in operators:
-        return [ { 'OPERATOR': token} ]
+        return [ { 'TYPE' : 'OPERATOR', 'TOKEN' : token} ]
     else:
-        return [ { 'ITEM': token } ]
+        return [ { 'TYPE' : 'ITEM', 'TOKEN' : token } ]
 
 def lex_line(line):
     items = line.split(' ')
@@ -42,18 +42,17 @@ def identify_strings(lexed_list):
     new_list = []
     temp_string = []
     for item in lexed_list:
-        if 'IDENTIFIER' in item.keys() and item['IDENTIFIER'] == '"':
+        if item['TYPE'] == 'IDENTIFIER' and item['TOKEN'] == '"':
             strings = not strings
             if strings == False:
-                string = { 'STRING': ' '.join(temp_string) }
+                string = { 'TYPE' : 'STRING', 'TOKEN' : ' '.join(temp_string) }
                 new_list.append(string)
             elif strings == True:
                 temp_string = []
         elif strings == False:
             new_list.append(item)
         elif strings == True:
-            v = list(item.values())
-            temp_string.append(v[0])
+            temp_string.append(item['TOKEN'])
     return new_list
 
 def parse_file(path):
