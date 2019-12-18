@@ -7,9 +7,11 @@ parser = argparse.ArgumentParser(description='Lexical analyzer for Lingr')
 parser.add_argument('-f, --file', action='store', dest='file_path', help='Specify a single file to work with, or comma seperated files')
 parser.add_argument('-l, --printlex', action='store_true', dest='printlex', help='Print the lexed lexed token list')
 parser.add_argument('-a, --printast', action='store_true', dest='printast', help='Print the Abstract Syntax Tree')
+parser.add_argument('-s, --standalone', action='store_true', dest='standalone', help='Run lexer.py by itself (not called from compiler)')
 
 results = parser.parse_args()
 
+# Lexographical Tokenizer
 def tokenize(token):
     operators = ['+', '-', '*', '/', '=']
     start_identifiers = ['"', '(', '[']
@@ -67,6 +69,7 @@ def parse_file(path):
     stringified = identify_strings(file_lexed)
     return stringified
 
+# Abstract Syntax Tree
 def sentenced(tokens):
     sentences = []
     this_sentence = []
@@ -80,15 +83,19 @@ def sentenced(tokens):
 
 def generateAST(tokens):
     # A sentence is a line of code. Sentences are demarcated by the ';' symbol.
-    sentences = sentenced(tokens)
-    print('Sentences:')
-    for sentence in sentences:
-        print(sentence)
-
+    sentences_list = sentenced(tokens)
+    return sentences_list
+    
 def main(options):
     lexed_items = parse_file(options.file_path)
     if options.printlex == True:
         for s in lexed_items:
             print(s)
     ast = generateAST(lexed_items)
-main(results)
+    if options.printast == True:
+        for sentence in ast:
+            print(sentence)
+    return ast
+
+if results.standalone == True:
+    main(results)
