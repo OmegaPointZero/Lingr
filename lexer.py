@@ -98,4 +98,5 @@ def main(options):
     return ast
 
 if results.standalone == True:
+    print(results)
     main(results)
