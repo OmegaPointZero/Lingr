@@ -1,25 +1,24 @@
 import lexer
 import argparse
 
-class program:
-    def __init__(self, sentences):
-        self.sentences = sentences
-        self.static_variables = []
-        self.uninitialized_variables = []
+class AST:
+    def __init__(self, token_list):
+        self.token_list = token_list
+        self.self = self
 
-    def get_sentences(self):
-        for sentence in self.sentences:
-            self.generate_tree(sentence)
-        return self.sentences
+    def generate_tree(self):
+        self.self = self
+        print('Number of things to interpret: %s' % len(self.token_list))
+        print(self.token_list)
 
-    def generate_tree(self,sentence):
-        print('Number of things to interpret: %s' % len(sentence))
-                
-        
-        
-        for thing in sentence:
-            print(thing)
+class expressions:
+    def __init__(self, phrase):
+        self.phrase = phrase
+        self.self = self
+    
+    def lookup_phrase(self,phrase):
+        print(phrase)
 
-prog = program(lexer.main(argparse.Namespace(file_path='test.lr', printast=True, printlex=False, standalone=False)))
+ast = AST(lexer.main(argparse.Namespace(file_path='test.lr', printast=True, printlex=False, standalone=False)))
 
-test_sentence = prog.get_sentences()
+ast.generate_tree()
