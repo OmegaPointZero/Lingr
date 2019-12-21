@@ -8,6 +8,10 @@ class expressions:
     def plus(first,second):
         strings = False
 
+        def parseplus(item):
+            if item['TYPE'] == 'INT':
+                z = int(first['TOKEN'])
+
         if first['TYPE'] == 'INT':
             f = int(first['TOKEN'])
         elif first['TYPE'] == 'STRING':
@@ -21,10 +25,14 @@ class expressions:
             strings = True
 
         if not strings:
-            # return f + s
-            # determine number lengths, in bytes
-            # Then determine opcode.
-            opcodes = [0xa,]                
+            return f + s
 
         elif strings:
             return str(f) + str(s)
+
+class interpreter:
+    def __init__(self, abstractSyntaxTree):
+        self.self = self
+        self.AbstractSyntaxTree = abstractSyntaxTree
+
+    
