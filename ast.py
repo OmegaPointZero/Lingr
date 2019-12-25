@@ -12,6 +12,8 @@ class expressions:
         self.self = self
         phrase = self.phrase
 
+        print('parsing phrase: %s' % phrase)
+
         addable = ['INT', 'STRING', 'FLOAT', 'ARRAY']
         if len(phrase) == 0 or len(phrase) == 1 or len(phrase) == 2:
             return None
@@ -30,7 +32,6 @@ class expressions:
 
     def lookup_phrase(self):
         self.self = self
-        print(self.phrase)
         add = self.add()
 
         return add 
@@ -84,7 +85,7 @@ class AST:
                     if(exp == []):
                         print('End of line detected')
                     else:
-                        tree = tree + exp
+                        tree.append(phrase)
                         exp = []
         print(tree)
         return tree
