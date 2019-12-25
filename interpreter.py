@@ -10,19 +10,14 @@ class expressions:
 
         def parseplus(item):
             if item['TYPE'] == 'INT':
-                z = int(first['TOKEN'])
+                z = int(item['TOKEN'])
+            elif item['TYPE'] == 'STRING':
+                z = item['TOKEN']
+                strings = True
+            return z
 
-        if first['TYPE'] == 'INT':
-            f = int(first['TOKEN'])
-        elif first['TYPE'] == 'STRING':
-            f = first['TOKEN']
-            strings = True
-
-        if second['TYPE'] == 'INT':
-            s = int(second['TOKEN'])
-        elif second['TYPE'] == 'STRING':
-            s = second['TOKEN']
-            strings = True
+        f = parseplus(first)
+        s = parseplus(second)
 
         if not strings:
             return f + s
@@ -35,4 +30,4 @@ class interpreter:
         self.self = self
         self.AbstractSyntaxTree = abstractSyntaxTree
 
-    
+
