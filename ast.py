@@ -12,8 +12,6 @@ class expressions:
         self.self = self
         phrase = self.phrase
 
-        print('parsing phrase: %s' % phrase)
-
         addable = ['INT', 'STRING', 'FLOAT', 'ARRAY']
         if len(phrase) == 0 or len(phrase) == 1 or len(phrase) == 2:
             return None
@@ -48,49 +46,48 @@ class AST:
         else:
             return False
 
+    # Parse for parenthesis and exponents, return an object
+    def pe(self, tokens):
+        # int 9 + (9 + (18)) + ( 4 + 1 )
+        nested_expressions = [[]] # an array of arrays
+        resolvables = 0
+        layer = 0
+        layers = [0]
+        for token in tokens:
+            print("""
+DEBUGGING INFO:
+nested_expressions: %s
+resolvables: %s
+layer: %s
+layers: %s
+token: %s""" % (nested_expressions,resolvables,layer,layers,token))
+
+            if self.tokeneval(token,'IDENTIFIER','(') == True:
+                nested_expressions.append([])
+                resolvables += 1
+                nested_expressions[layer].append({'TYPE' : 'RESOLVABLE', 'TOKEN': 'RESOLVABLE'+str(resolvables-1)})
+                layers.append(resolvables)
+                layer += 1
+                nested_expressions[layer].append({'TYPE' : 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE'+str(layers[layer]-1) })
+            elif self.tokeneval(token,'IDENTIFIER',')'):
+                nested_expressions[layer].append({'TYPE': 'META', 'SUBTYPE' : 'END', 'TOKEN': 'RESOLVABLE'+str(layers[layer-1])})
+                layer -= 1
+                layers.pop()
+            else:
+                nested_expressions[layer].append(token)
+
+        print('nested expressions array:')
+        print(nested_expressions)        
+
     def generate_tree(self):
         self.self = self
         tokens = self.token_list
-        tree = []
-        exp = [] # expression being built
-        resolvables = [] 
-        resolvable_count = 0 
-        current_count = 0
-        resolvable_nest = []
-        for token in tokens: 
-            print('token: %s' % token)
-            phrase = expressions(exp).lookup_phrase()
-            if phrase == None:
-                print('No Phrase!')
-                if self.tokeneval(token,'IDENTIFIER',';'): 
-                    print('Abstract Syntax Table ERROR: %s\nNO SUCH EXPRESSION FOUND' % exp)
-                    exp = []
-                    break
-                elif self.tokeneval(token,'IDENTIFIER','(') == True:
-                    exp.append({'TYPE' : 'RESOLVABLE', 'TOKEN' : 'RESOLVABLE'+str(resolvable_count)})
-                    resolvable_nest.append(resolvable_count)
-                    resolvable_count += 1
-                    current_count += 1
-                elif self.tokeneval(token,'IDENTIFIER',')') == True:
-                    exp.append({'TYPE': 'RESOLVABLE', 'TOKEN' : 'END'+str(resolvable_nest[current_count])}) 
-                    current_count -= 1
-                    resolvable_nest.pop()
-                else:
-                    exp.append(token)
-            elif re.match('/^RESOLVABLE/', phrase.split(' ')[-1]):
-                """ writing an AST and lexer is really,  really hard """
-            else:
-                print('phrase: %s' % phrase)
-                if self.tokeneval(token,'IDENTIFIER',';'): 
-                    if(exp == []):
-                        print('End of line detected')
-                    else:
-                        tree.append(phrase)
-                        exp = []
+        first_iteration = self.pe(tokens)
+
         print(tree)
         return tree
 
-ast = AST(lexer.main(argparse.Namespace(file_path='test.lr', printast=True, printlex=False, standalone=False)))
+ast = AST(lexer.main(argparse.Namespace(file_path='test2.lr', printast=True, printlex=False, standalone=False)))
 
 ast.generate_tree()
 
