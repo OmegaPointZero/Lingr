@@ -84,8 +84,8 @@ token: %s""" % (nested_expressions,resolvables,layer,layers,token))
         tokens = self.token_list
         first_iteration = self.pe(tokens)
 
-        print(tree)
-        return tree
+        print(first_iteration)
+        return first_iteration
 
 ast = AST(lexer.main(argparse.Namespace(file_path='test2.lr', printast=True, printlex=False, standalone=False)))
 
