@@ -23,27 +23,24 @@ It has a basic lexer that can tokenize the following:
 
 ## Abstract Syntax Tree
 
-Still working out how to build the AST; I think it's appropriate to start out evaluating 2-token statements, and from there reading ahead to evaluate what needs to be done in what order. 
+The AST is finally starting to take shape, and with the rewriting of it, shaping the direction of the project. So far, the file gets parsed into individual tokens, as long as they match the above criteria. The lexed tokens are then passed to the AST. The AST then takes said tokens (in a list), and returns a list of lists. The contained lists are modified lists of tokens, where anything within a line of code contained within parenthesis is replaced with a variable, RESOLVABLEi. All arrays after the first one should begin with an object identifying the beginning of a RESOLVABLE variable, as well as it's ID. The last item should end with an object identifying the end of that RESOLVABLE variable. The tokens in between are the contents of those parenthesis. So, 1 + ( 2 + 3) becomes `[1 + RESOLVABLE0], [START_RESOLVABLE0 2 + 3 END_RESOLVABLE0]` The order is then reversed, to start resolving from the bottom up (so that nested parentheses are correctly parsed and resolved).
 
-## State of Development - Current Sprint Objectives
+Due to scrapping the old AST logic, the next objectives have changed
 
-### Primary objective: pass these lingr .lr files to the interpreter:
+## Development objectives
 
-File 1:
+### Primary
 
-```
-9 + 18;
-9 + (3 * 9);
-```
++ Rewrite the lexer to scrutinze whitespace seperated items harder. `1 + (2 + 3)` would be parsed correctly, `1 + (2+3)` wouldn't. 
++ Create a function to create tree leaves, and break everything down into pseudo-assembly: An operation, a source, and a destination. 1 + 2 becomes `[{'TYPE': 'INT', 'TOKEN': '1'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'INT', 'TOKEN': '2'}]`, which should then become `ADD 1 2`, which is, of course, much easier to translate into asm, the next step before translating into machine code directly. 
 
-Such that `9+18` is identified as an ADD expression, and will be passed to the interpreter as an {`ADD 0x09 0x12`} set of instructions. `9 + (3*9)` Should be passed as  {`MULT 03 09 VAR1 ADD 09 VAR1`}, or something along those lines. I don't know how the AST will format the information being passed along to the interpreter or the compiler, but I think it would be efficient to figure out how to create a class recursively to evaluate this kind of thing in an optimized way. Ultimately, I want to be able to compile 9+18 in machine code with the compiler, but also be able to optimize it in the AST before passing it along to an interpreter or the compiler. 
+### Tertiary
 
-File 2:
++ Once whitespace seperated items are parsed better, identify the increment and decrement operators. Lex braces in the same way, and add a symbol for the modulus.
++ Add a "print" function. An identifier, so that I can print shit to the console. May come before or after the first compiler version.
 
-```
-_string = "Hello, world!"
-_string + " Longr livr lingr!"
-_string + 1
-```
+## Looking ahead
 
-It should have _string equal to "Hello, world!", "Hello, world! Longr livr lingr!" and "Hello, world! Longr livr lingr!1". Whatever you do in lingr, it does. If the AST can parse all of these successfully, making something like {`[SET _string STRING "Hello, world"] [ADD _string " Longr livr lingr!"] [ADD _string 1] (<-- but make it the text, not the char at 0x01)`}, then all of the present cases for + are handled!
+Once the tree has leaves in statements that can be digested into pseudoassembly, I'll start on the compiler to make ELF files. 32-bit to start, with a 64-bit option added after I work out the kinks in the rudimentary 32 bit one. Print'll be fun to figure out, and highlights that I'll need to work out how to find the right syscall numbers. 
+
+Once I can compile an executable, run it without error, and have it add, subtract, divide, and multiply, and print out what it calculates, I can start looking into how to hold variables, objects and arrays in memory, and access them. 
