@@ -2,107 +2,92 @@
 DEBUGGING INFO:
 nested_expressions: [[]]
 resolvables: 0
-layer: 0
 layers: [0]
 token: {'TYPE': 'INT', 'TOKEN': '9'}
 
 DEBUGGING INFO:
 nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}]]
 resolvables: 0
-layer: 0
 layers: [0]
 token: {'TYPE': 'OPERATOR', 'TOKEN': '+'}
 
 DEBUGGING INFO:
 nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}]]
 resolvables: 0
-layer: 0
 layers: [0]
 token: {'TYPE': 'IDENTIFIER', 'TOKEN': '('}
 
 DEBUGGING INFO:
-nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE0'}]]
+nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}]]
 resolvables: 1
-layer: 1
 layers: [0, 1]
 token: {'TYPE': 'INT', 'TOKEN': '9'}
 
 DEBUGGING INFO:
-nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'INT', 'TOKEN': '9'}]]
+nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '9'}]]
 resolvables: 1
-layer: 1
 layers: [0, 1]
 token: {'TYPE': 'OPERATOR', 'TOKEN': '+'}
 
 DEBUGGING INFO:
-nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}]]
+nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}]]
 resolvables: 1
-layer: 1
 layers: [0, 1]
 token: {'TYPE': 'IDENTIFIER', 'TOKEN': '('}
 
 DEBUGGING INFO:
-nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}]]
+nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE2'}]]
 resolvables: 2
-layer: 2
 layers: [0, 1, 2]
 token: {'TYPE': 'INT', 'TOKEN': '18'}
 
 DEBUGGING INFO:
-nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '18'}]]
+nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE2'}, {'TYPE': 'INT', 'TOKEN': '18'}]]
 resolvables: 2
-layer: 2
 layers: [0, 1, 2]
 token: {'TYPE': 'IDENTIFIER', 'TOKEN': ')'}
 
 DEBUGGING INFO:
-nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '18'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE1'}]]
+nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE2'}, {'TYPE': 'INT', 'TOKEN': '18'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE2'}]]
 resolvables: 2
-layer: 1
 layers: [0, 1]
 token: {'TYPE': 'IDENTIFIER', 'TOKEN': ')'}
 
 DEBUGGING INFO:
-nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE0'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '18'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE1'}]]
+nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE1'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE2'}, {'TYPE': 'INT', 'TOKEN': '18'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE2'}]]
 resolvables: 2
-layer: 0
 layers: [0]
 token: {'TYPE': 'OPERATOR', 'TOKEN': '+'}
 
 DEBUGGING INFO:
-nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE0'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '18'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE1'}]]
+nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE1'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE2'}, {'TYPE': 'INT', 'TOKEN': '18'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE2'}]]
 resolvables: 2
-layer: 0
 layers: [0]
 token: {'TYPE': 'IDENTIFIER', 'TOKEN': '('}
 
 DEBUGGING INFO:
-nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE2'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE2'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '18'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE1'}], []]
+nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE2'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE1'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE2'}, {'TYPE': 'INT', 'TOKEN': '18'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE2'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE3'}]]
 resolvables: 3
-layer: 1
 layers: [0, 3]
 token: {'TYPE': 'INT', 'TOKEN': '4'}
 
 DEBUGGING INFO:
-nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE2'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE2'}, {'TYPE': 'INT', 'TOKEN': '4'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '18'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE1'}], []]
+nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE2'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE1'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE2'}, {'TYPE': 'INT', 'TOKEN': '18'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE2'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE3'}, {'TYPE': 'INT', 'TOKEN': '4'}]]
 resolvables: 3
-layer: 1
 layers: [0, 3]
 token: {'TYPE': 'OPERATOR', 'TOKEN': '+'}
 
 DEBUGGING INFO:
-nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE2'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE2'}, {'TYPE': 'INT', 'TOKEN': '4'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '18'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE1'}], []]
+nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE2'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE1'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE2'}, {'TYPE': 'INT', 'TOKEN': '18'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE2'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE3'}, {'TYPE': 'INT', 'TOKEN': '4'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}]]
 resolvables: 3
-layer: 1
 layers: [0, 3]
 token: {'TYPE': 'INT', 'TOKEN': '1'}
 
 DEBUGGING INFO:
-nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE2'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE2'}, {'TYPE': 'INT', 'TOKEN': '4'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'INT', 'TOKEN': '1'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '18'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE1'}], []]
+nested_expressions: [[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE2'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE1'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE2'}, {'TYPE': 'INT', 'TOKEN': '18'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE2'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE3'}, {'TYPE': 'INT', 'TOKEN': '4'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'INT', 'TOKEN': '1'}]]
 resolvables: 3
-layer: 1
 layers: [0, 3]
 token: {'TYPE': 'IDENTIFIER', 'TOKEN': ')'}
 nested expressions array:
-[[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE2'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE2'}, {'TYPE': 'INT', 'TOKEN': '4'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'INT', 'TOKEN': '1'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE0'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '18'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE1'}], []]
+[[{'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE0'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE2'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'INT', 'TOKEN': '9'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'RESOLVABLE', 'TOKEN': 'RESOLVABLE1'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE1'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE2'}, {'TYPE': 'INT', 'TOKEN': '18'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE2'}], [{'TYPE': 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE3'}, {'TYPE': 'INT', 'TOKEN': '4'}, {'TYPE': 'OPERATOR', 'TOKEN': '+'}, {'TYPE': 'INT', 'TOKEN': '1'}, {'TYPE': 'META', 'SUBTYPE': 'END', 'TOKEN': 'RESOLVABLE3'}]]
 None

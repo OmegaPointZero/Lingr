@@ -51,40 +51,33 @@ class AST:
         # int 9 + (9 + (18)) + ( 4 + 1 )
         nested_expressions = [[]] # an array of arrays
         resolvables = 0
-        layer = 0
         layers = [0]
         for token in tokens:
-            print("""
-DEBUGGING INFO:
-nested_expressions: %s
-resolvables: %s
-layer: %s
-layers: %s
-token: %s""" % (nested_expressions,resolvables,layer,layers,token))
 
             if self.tokeneval(token,'IDENTIFIER','(') == True:
                 nested_expressions.append([])
                 resolvables += 1
-                nested_expressions[layer].append({'TYPE' : 'RESOLVABLE', 'TOKEN': 'RESOLVABLE'+str(resolvables-1)})
+                nested_expressions[layers[-1]].append({'TYPE' : 'RESOLVABLE', 'TOKEN': 'RESOLVABLE'+str(resolvables)})
                 layers.append(resolvables)
-                layer += 1
-                nested_expressions[layer].append({'TYPE' : 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE'+str(layers[layer]-1) })
-            elif self.tokeneval(token,'IDENTIFIER',')'):
-                nested_expressions[layer].append({'TYPE': 'META', 'SUBTYPE' : 'END', 'TOKEN': 'RESOLVABLE'+str(layers[layer-1])})
-                layer -= 1
-                layers.pop()
-            else:
-                nested_expressions[layer].append(token)
+                nested_expressions[layers[-1]].append({'TYPE' : 'META', 'SUBTYPE': 'START', 'TOKEN': 'RESOLVABLE'+str(layers[-1])})
 
-        print('nested expressions array:')
-        print(nested_expressions)        
+            elif self.tokeneval(token,'IDENTIFIER',')'):
+                nested_expressions[layers[-1]].append({'TYPE': 'META', 'SUBTYPE' : 'END', 'TOKEN': 'RESOLVABLE'+str(layers[-1])})
+                layers.pop()
+
+            else:
+                nested_expressions[layers[-1]].append(token)
+
+        nested_expressions.reverse()
+        return nested_expressions
 
     def generate_tree(self):
         self.self = self
         tokens = self.token_list
         first_iteration = self.pe(tokens)
 
-        print(first_iteration)
+        for expression in first_iteration: 
+            print(expression)
         return first_iteration
 
 ast = AST(lexer.main(argparse.Namespace(file_path='test2.lr', printast=True, printlex=False, standalone=False)))
