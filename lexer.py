@@ -10,7 +10,6 @@ parser.add_argument('-s, --standalone', action='store_true', dest='standalone', 
 
 results = parser.parse_args()
 
-# Lexographical Tokenizer
 def tokenize(token):
     operators = ['+', '-', '*', '/', '=']
     start_identifiers = ['"', '(', '[']
@@ -19,15 +18,22 @@ def tokenize(token):
     if token[0] in start_identifiers:
         return[{'TYPE' : 'IDENTIFIER', 'TOKEN': token[0]}] + tokenize(token[1:])
     elif token[-1] in end_identifiers:
-        return tokenize(token[:-1]) + [{ 'TYPE' : 'IDENTIFIER', 'TOKEN' : token[-1] }]
+        return tokenize(token[:-1]) + [{ 'TYPE' : 'IDENTIFIER', 'TOKEN' : token[-1] }] 
     if token[0] == '_':
         return [{ 'TYPE': 'NAME', 'TOKEN': token }]
     elif re.match('^\d+$', token):
         return [{'TYPE' : 'INT', 'TOKEN': token}]
     elif token in operators:
         return [{ 'TYPE' : 'OPERATOR', 'TOKEN' : token}]
+    elif re.match('++$', token):
+        return tokenize(token[0:-2]) + [{'TYPE': 'OPERATOR', 'TOKEN': 'INCREMENT'}]
+    elif re.match('--$', token):
+        return tokenize(token[0:-2]) + [{'TYPE': 'OPERATOR', 'TOKEN': 'DECREMENT'}]
+
     else:
         return [{ 'TYPE' : 'ITEM', 'TOKEN' : token }]
+
+
 
 def lex_line(line):
     items = line.split(' ')
@@ -78,3 +84,4 @@ def main(options):
 if results.standalone == True:
     print(results)
     main(results)
+
